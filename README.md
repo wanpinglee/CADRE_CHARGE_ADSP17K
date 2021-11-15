@@ -30,6 +30,6 @@ Gina Marie Peloso - [Email](gpeloso@bu.edu)
 Wan-Ping Lee - [Email](wan-ping.lee@pennmedicine.upenn.edu)
 
 ---
-## Acknowledgements
+## Acknowledgments
 
 
