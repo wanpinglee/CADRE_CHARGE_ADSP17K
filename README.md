@@ -26,9 +26,10 @@ The implementation is available for academic and nonprofit use for free [LICENSE
 
 ## Contacts
 Gina Marie Peloso - [Email](gpeloso@bu.edu)
+
 Wan-Ping Lee - [Email](wan-ping.lee@pennmedicine.upenn.edu)
 
---
+---
+## Acknowledgements
 
-## Acknowledgments
 
