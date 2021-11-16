@@ -21,10 +21,19 @@
 ---
 
 ## Getting started
-	git clone --recursive https://wanpinglee_penn@bitbucket.org/wanpinglee_penn/callset_reparation.git
-	cd callset_reparation
-	make
+### Installation
+```
+git clone --recursive https://wanpinglee_penn@bitbucket.org/wanpinglee_penn/callset_reparation.git
+cd callset_reparation
+make
+```
 
+### Execution
+
+1. Keep variants in bi-allelic VCFs if
+	- VFLAGS_one_subgroup=0
+	- (ABHet_one_subgroup > 0.25 && ABHet_one_subgroup < 0.75) || ABHet_one_subgroup = '.'
+	- AN > 1690 (GT missing rate > 5%)
 
 ## License
 The implementation is available for academic and nonprofit use for free [LICENSE.md](LICENSE.md).
