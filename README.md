@@ -4,8 +4,8 @@
 
 ## Project Files Description
 ### Input file
-- Bi-allelic **QC** VCFs (one VCF for a autosomal) with 16,905 samples (Released in October 2021)
-- Multi-allelic VCFs (one VCF for a autosomal) with 16,906 samples (Released in March 2021)
+- Bi-allelic **QC** VCFs (one VCF for a autosomal) with 16,905 samples released in October 2021
+- Multi-allelic VCFs (one VCF for a autosomal) with 16,906 samples released in March 2021
 
 ### Output file
 - VCFs (one VCF for a autosomal) with sample and variant filtering done
@@ -15,9 +15,16 @@
 ## Dependencies
 ### Tools
 - NIAGADS/GCAD [compact_vcf](https://bitbucket.org/NIAGADS/compact_vcf/src/master/)
-- bcftools
+- HTS library v1.12 (has embedded in [libs](libs))
+- bcftools v1.12 (has embedded in [libs](libs))
 
 ---
+
+## Getting started
+	git clone --recursive https://wanpinglee_penn@bitbucket.org/wanpinglee_penn/callset_reparation.git
+	cd callset_reparation
+	make
+
 
 ## License
 The implementation is available for academic and nonprofit use for free [LICENSE.md](LICENSE.md).
