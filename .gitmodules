@@ -1,9 +1,3 @@
 [submodule "libs/compact_vcf"]
 	path = libs/compact_vcf
 	url = https://wanpinglee_penn@bitbucket.org/NIAGADS/compact_vcf.git
-[submodule "libs/htslib"]
-	path = libs/htslib
-	url = https://github.com/samtools/htslib.git
-[submodule "libs/bcftools"]
-	path = libs/bcftools
-	url = https://github.com/samtools/bcftools.git
