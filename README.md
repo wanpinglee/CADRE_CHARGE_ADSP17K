@@ -35,6 +35,11 @@ make
 	- (ABHet_one_subgroup > 0.25 && ABHet_one_subgroup < 0.75) || ABHet_one_subgroup = '.'
 	- AN > 1690 (GT missing rate > 5%)
 
+2. Multi-allelic variants
+	-gentoype level QC:
+ bcftools filter -S .  -i "FMT/GQ >= 20 & FMT/DP >= 10"  vcf_filename
+	-variant level QC:
+
 ## License
 The implementation is available for academic and nonprofit use for free [LICENSE.md](LICENSE.md).
 
