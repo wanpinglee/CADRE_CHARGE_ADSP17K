@@ -30,15 +30,17 @@ make
 
 ### Execution
 
-1. Keep variants in bi-allelic VCFs if
+1. For a bi-allelic variant, keep it if (check [script/1_bi_var.sh](script/1_bi_var.sh))
 	- VFLAGS_one_subgroup=0
 	- (ABHet_one_subgroup > 0.25 && ABHet_one_subgroup < 0.75) || ABHet_one_subgroup = '.'
-	- AN > 1690 (GT missing rate > 5%)
+	- AN > 1690 (GT missing rate < 5%)
 
-2. Multi-allelic variants
-	-gentoype level QC:
- bcftools filter -S .  -i "FMT/GQ >= 20 & FMT/DP >= 10"  vcf_filename
-	-variant level QC:
+2. For a multi-allelic variant, (check [script/2_multi_var.sh](script/2_multi_var.sh))
+	- Change low-quality GT to missing: bcftools filter -S .  -i "FMT/GQ >= 20 & FMT/DP >= 10"
+	- Normalize and left-align snps and indels: bcftools norm -f $REF -m-
+	- Keep snps only
+	- Update AC, AN, and AF in the INFO field
+	- Keep a variant with GT missing rate < 5%
 
 ## License
 The implementation is available for academic and nonprofit use for free [LICENSE.md](LICENSE.md).

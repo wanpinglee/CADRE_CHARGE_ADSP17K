@@ -17,7 +17,7 @@ mkdir -p $OUT_DIR
 
 bin/bcftools filter -S . -i "FMT/GQ >= 20 & FMT/DP >= 10" $VCF \
   | bin/compact_vcf \
-  | bin/bcftools norm -f $REF -D -d all -m- \
+  | bin/bcftools norm -f $REF -m- \
   | bin/bcftools view -v snps -f 'PASS' \
   | bin/bcftools +fill-tags - -- -t AC,AN,AF \
   | bin/bcftools view -i "AN > 1690" -Oz -o $OUT_DIR/$(basename $VCF)
