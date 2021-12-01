@@ -30,12 +30,12 @@ make
 
 ### Execution
 
-1. For a bi-allelic variant, keep it if (check [script/1_bi_var.sh](script/1_bi_var.sh))
+1. For a bi-allelic variant, keep it if (check [scripts/1_bi_var.sh](scripts/1_bi_var.sh))
 	- VFLAGS_one_subgroup=0
 	- (ABHet_one_subgroup > 0.25 && ABHet_one_subgroup < 0.75) || ABHet_one_subgroup = '.'
 	- AN > 1690 (GT missing rate < 5%)
 
-2. For a multi-allelic variant, (check [script/2_multi_var.sh](script/2_multi_var.sh))
+2. For a multi-allelic variant, (check [scripts/2_multi_var.sh](scripts/2_multi_var.sh))
 	- Change low-quality GT to missing: bcftools filter -S .  -i "FMT/GQ >= 20 & FMT/DP >= 10"
 	- Normalize and left-align snps and indels: bcftools norm -f $REF -m-
 	- Keep snps only
