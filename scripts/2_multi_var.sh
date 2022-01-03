@@ -1,23 +1,23 @@
 #!/bin/bash
 
-if [ "$#" -ne 3 ]
+if [ "$#" -ne 4 ]
 then
-      echo "usage: $0 <VCF> <REF> <OUT_DIR>"
+      echo "usage: $0 <VCF> <REF> <Sample_List> <OUT_DIR>"
+      echo "<Sample_List> indicates all samples in the bi-alleic VCFs."
       exit 1
 fi
 
 VCF=$1
 REF=$2
-OUT_DIR=$3
+SAMPLES=$3
+OUT_DIR=$4
 
 mkdir -p $OUT_DIR
 
-# AN > 1690 since we like to filter variants if their GT missing > 0.05.
-# bin/compact_vcf reads from stdin and generates to stdout
+cd /mnt/data3/old-master/leew/tools/callset_preparation/scripts
 
-bin/bcftools filter -S . -i "FMT/GQ >= 20 & FMT/DP >= 10" $VCF \
-  | bin/compact_vcf \
-  | bin/bcftools norm -f $REF -m- \
-  | bin/bcftools view -v snps -f 'PASS' \
-  | bin/bcftools +fill-tags - -- -t AC,AN,AF \
-  | bin/bcftools view -i "AN > 1690" -Oz -o $OUT_DIR/$(basename $VCF)
+../bin/bcftools view --threads 2 -S $SAMPLES -Ou -f PASS $VCF \
+  | ../bin/bcftools annotate --threads 2 -Ou -x "FORMAT/PGT,FORMAT/PID,FORMAT/PL,FORMAT/PS" \
+  | ../bin/bcftools norm --threads 2 -m -any -f $REF -O u \
+  | ../bin/bcftools filter --threads 2 -S . -Ou -i "FMT/GQ >= 20 & FMT/DP >= 10" \
+  | ../bin/bcftools annotate --threads 2 -x "FORMAT" -Oz -o $OUT_DIR/$(basename $VCF)

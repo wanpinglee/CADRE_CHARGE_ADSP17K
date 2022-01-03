@@ -36,11 +36,11 @@ make
 	- AN > 1690 (GT missing rate < 5%)
 
 2. For a multi-allelic variant, (check [scripts/2_multi_var.sh](scripts/2_multi_var.sh))
+	- Coordinate the sample list with bi-allelic VCFs
+	- Removes the field PGT, PID, PL, and PS to reduce filesizes
+	- Normalize and left-align snps and indels: bcftools norm -f $REF -m -any
 	- Change low-quality GT to missing: bcftools filter -S .  -i "FMT/GQ >= 20 & FMT/DP >= 10"
-	- Normalize and left-align snps and indels: bcftools norm -f $REF -m-
-	- Keep snps only
-	- Update AC, AN, and AF in the INFO field
-	- Keep a variant with GT missing rate < 5%
+	- Keep GT only
 
 ## License
 The implementation is available for academic and nonprofit use for free [LICENSE.md](LICENSE.md).
