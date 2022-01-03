@@ -18,9 +18,9 @@ export $(CFLAGS)
 export $(CXXFLAGS)
 
 COMPACT=$(BIN_DIR)/compact_vcf
-BCFTOOLS_DIR=$(LIB)/bcftools-1.12
+BCFTOOLS_DIR=$(LIB)/bcftools-1.14
 BCFTOOLS=$(BIN_DIR)/bcftools
-HTS_DIR=$(LIB)/htslib-1.12
+HTS_DIR=$(LIB)/htslib-1.14
 HTS_LIB=$(HTS_DIR)/libhts.a
 
 all: $(COMPACT) $(BCFTOOLS)
@@ -41,7 +41,7 @@ $(COMPACT):
 
 $(BCFTOOLS): $(HTS_LIB)
 	@echo "- Building in bcftools"
-	@cd $(LIB) && tar -zxvf $(LIB)/bcftools-1.12.tar.gz
+	@cd $(LIB) && tar -zxvf $(LIB)/bcftools-1.14.tar.gz
 	@cd $(BCFTOOLS_DIR) && $(AUTOHEADER) && $(AUTOCONF) && ./configure
 	@$(MAKE) --no-print-directory -C $(BCFTOOLS_DIR)
 	@cp $(BCFTOOLS_DIR)/bcftools $@
@@ -49,6 +49,6 @@ $(BCFTOOLS): $(HTS_LIB)
 
 $(HTS_LIB):
 	@echo "- Building in htslib"
-	@cd $(LIB) && tar -zxvf $(LIB)/htslib-1.12.tar.gz
+	@cd $(LIB) && tar -zxvf $(LIB)/htslib-1.14.tar.gz
 	@cd $(HTS_DIR) && $(AUTOHEADER) && $(AUTOCONF) && ./configure --disable-lzma --disable-lcurl
 	@$(MAKE) --no-print-directory -C $(HTS_DIR)
