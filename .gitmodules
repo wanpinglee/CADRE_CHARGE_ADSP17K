@@ -1,3 +1,6 @@
 [submodule "libs/htslib"]
 	path = libs/htslib
 	url = https://github.com/samtools/htslib
+[submodule "libs/bcftools"]
+	path = libs/bcftools
+	url = https://github.com/samtools/bcftools.git
