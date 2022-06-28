@@ -17,7 +17,6 @@ CXXFLAGS:=-std=c++11 $(CFLAGS)
 export $(CFLAGS)
 export $(CXXFLAGS)
 
-COMPACT=$(BIN_DIR)/compact_vcf
 BCFTOOLS_DIR=$(LIB)/bcftools-1.14
 BCFTOOLS=$(BIN_DIR)/bcftools
 HTS_DIR=$(LIB)/htslib-1.14
@@ -28,16 +27,9 @@ all: $(COMPACT) $(BCFTOOLS)
 
 clean:
 	@rm -rf $(BIN_DIR)
-	$(MAKE) clean -C $(LIB)/compact_vcf
 	rm -rf $(HTS_DIR)
 	rm -rf $(BCFTOOLS_DIR)
 .PHONY: clean
-
-$(COMPACT):
-	@mkdir -p $(BIN_DIR)
-	@echo "- Building in compact_vcf"
-	@$(MAKE) --no-print-directory --directory=$(LIB)/compact_vcf
-	@cp $(LIB)/compact_vcf/bin/compact_vcf $@
 
 $(BCFTOOLS): $(HTS_LIB)
 	@echo "- Building in bcftools"

@@ -23,8 +23,8 @@
 ## Getting started
 ### Installation
 ```
-git clone --recursive https://wanpinglee_penn@bitbucket.org/wanpinglee_penn/callset_reparation.git
-cd callset_reparation
+git clone --recursive https://wanpinglee_penn@bitbucket.org/wanpinglee_penn/vcf_reparation.git
+cd vcf_reparation
 make
 ```
 
@@ -41,6 +41,8 @@ make
 	- Normalize and left-align snps and indels: bcftools norm -f $REF -m -any
 	- Change low-quality GT to missing: bcftools filter -S .  -i "FMT/GQ >= 20 & FMT/DP >= 10"
 	- Keep GT only
+	- Update AC, AF, and AN
+	- Note: ALT could be '*'
 
 ## License
 The implementation is available for academic and nonprofit use for free [LICENSE.md](LICENSE.md).
