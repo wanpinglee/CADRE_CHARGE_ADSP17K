@@ -14,7 +14,6 @@
 
 ## Dependencies
 ### Tools
-- NIAGADS/GCAD [compact_vcf](https://bitbucket.org/NIAGADS/compact_vcf/src/master/)
 - HTS library v1.12 (has embedded in [libs](libs))
 - bcftools v1.12 (has embedded in [libs](libs))
 
