@@ -1,3 +1,4 @@
+#!/usr/bin/env RScript
 
 ##### Parse parameters #####
 args = commandArgs(trailingOnly=TRUE)

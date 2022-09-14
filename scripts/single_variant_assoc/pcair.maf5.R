@@ -1,10 +1,10 @@
+#!/usr/bin/env Rscript
 
 ##### Parse parameters #####
 args = commandArgs(trailingOnly=TRUE)
 if (length(args)!=3) {
 	cat("\n")
 	cat("Usage: Rscript --vanilla pcair.r <GDS> <Sample_Annot File> <Out_Prefix>\n")
-	cat("\tVCF filenames should be with the prefix \"chr\" and the suffix \"vcf.gz\".\n")
 	cat("\tSample Annot file is tab-delimited with the header: sample.id Population SuperPopulation Project\n\n")
 	q(save="no")
 }
@@ -26,7 +26,6 @@ gdsfile <- args[1]
 # sample.id  Population  SuperPopulation Project
 # HG00096  GBR EUR 1KG
 # Note: The order of samples should match to VCF.
-#annotfile <- "/mnt/adsp/users/leew/17k_gatk/PCA/info/adsp_self_report/aa.sample.txt"
 annotfile <- args[2]
 
 # Ref ID file format
