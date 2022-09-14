@@ -10,7 +10,7 @@ rm(list=ls())
 args = commandArgs(trailingOnly=TRUE)
 if (length(args)!=4) {
         cat("\n")
-        cat("Usage: Rscript --vanilla Varinfo_gds.R <CHR_GDS> <CHR> <FAVORdatabase_chrsplit.csv> <Out_Path>\n")
+        cat("Usage: Rscript --vanilla Varinfo_gds.R <GDS> <CHR> <FAVORdatabase_chrsplit.csv> <Out_Path>\n")
 	cat("\tInput:\n")
 	cat("\t\t<CHR_GDS> is a GDS file for a chromosome.\n")
 	cat("\t\t<CHR> is a number.\n")
@@ -55,6 +55,7 @@ DB_info <- DB_info[DB_info$Chr==chr,]
 
 ## open GDS
 genofile <- seqOpen(genoGDS)
+seqSetFilterChrom(genofile, include=chr)
 
 ## Generate VarInfo
 CHR <- as.numeric(seqGetData(genofile, "chromosome"))
