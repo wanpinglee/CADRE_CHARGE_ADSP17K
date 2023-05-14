@@ -17,8 +17,7 @@
 ## Steps
 1. VCF preparation [README](scripts/vcf_preparation/README.md)
 2. Single-variant association analysis for variant with MAF > 0.5% [README](scripts/single_variant_assoc/README.md)
-3. Gene-based testing for coding variant with MAF < 1% using STAAR [README](scripts/staar/README.md)
-4. Rare noncoding variants
+3. association analysis for rare coding or non-coding variants with MAF < 1% using STAAR [README](scripts/staar/README.md)
 
 
 ## Dependencies
