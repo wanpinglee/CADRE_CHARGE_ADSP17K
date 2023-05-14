@@ -1,4 +1,4 @@
-**Note:** This repository collects scripts for CADRE and CHARGE joint project that aims to conduct association analyses of Alzheimer’s Disease (AD) by using ADSP 17K whole genome sequence (WGS) data which is NIAGADS R3 release.
+**Note:** This repository collects scripts for CADRE and CHARGE joint project that aims to conduct association analyses of Alzheimerâ€™s Disease (AD) by using ADSP 17K whole genome sequence (WGS) data which is NIAGADS R3 release.
 
 ---
 
@@ -15,9 +15,9 @@
 ---
 
 ## Steps
-1. VCF preparation [scripts/vcf_preparation/README.md](README)
-2. Single-variant association analysis for variant with MAF > 0.5% [scripts/single_variant_assoc/README.md](README)
-3. Gene-based testing for coding variant with MAF < 1%
+1. VCF preparation [README](scripts/vcf_preparation/README.md)
+2. Single-variant association analysis for variant with MAF > 0.5% [README](scripts/single_variant_assoc/README.md)
+3. Gene-based testing for coding variant with MAF < 1% using STAAR [README](scripts/staar/README.md)
 4. Rare noncoding variants
 
 
@@ -28,13 +28,6 @@
 
 ---
 
-## Getting started
-### Installation
-```
-git clone --recursive https://wanpinglee_penn@bitbucket.org/wanpinglee_penn/vcf_reparation.git
-cd vcf_reparation
-make
-```
 
 ## License
 The implementation is available for academic and nonprofit use for free [LICENSE.md](LICENSE.md).
