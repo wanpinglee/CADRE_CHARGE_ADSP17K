@@ -1,5 +1,6 @@
 **Note:** This repository collects scripts for CADRE and CHARGE joint project that aims to conduct association analyses of Alzheimer’s Disease (AD) by using ADSP 17K whole genome sequence (WGS) data which is NIAGADS R3 release.
 
+
 ---
 
 ## Project Files Description
@@ -18,6 +19,7 @@
 1. VCF preparation [README](scripts/vcf_preparation/README.md)
 2. Single-variant association analysis for variant with MAF > 0.5% [README](scripts/single_variant_assoc/README.md)
 3. association analysis for rare coding or non-coding variants with MAF < 1% using STAAR [README](scripts/staar/README.md)
+
 
 
 ## Dependencies
