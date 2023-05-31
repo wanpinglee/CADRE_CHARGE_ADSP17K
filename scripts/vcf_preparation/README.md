@@ -12,12 +12,12 @@
 
 ### Execution
 
-1. For a bi-allelic variant, keep it if (check [scripts/vcf_preparation/bi_allelic.sh](scripts/vcf_preparation/bi_allelic.sh))
+1. For a bi-allelic variant, keep it if (check [bi_allelic.sh](bi_allelic.sh))
 	- VFLAGS_one_subgroup=0
 	- (ABHet_one_subgroup > 0.25 && ABHet_one_subgroup < 0.75) || ABHet_one_subgroup = '.'
 	- AN > 1690 (GT missing rate < 5%)
 
-2. For a multi-allelic variant, (check [scripts/vcf_preparation/multi_allelic.sh](scripts/vcf_preparation/multi_allelic.sh))
+2. For a multi-allelic variant, (check [multi_allelic.sh](multi_allelic.sh))
 	- Coordinate the sample list with bi-allelic VCFs
 	- Removes the field PGT, PID, PL, and PS to reduce filesizes
 	- Normalize and left-align snps and indels: bcftools norm -f $REF -m -any
