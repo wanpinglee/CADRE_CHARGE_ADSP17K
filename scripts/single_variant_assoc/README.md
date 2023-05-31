@@ -2,7 +2,7 @@
 
 ## Files Description
 ### Input file
-- Per chromosome VCF from [scripts/vcf_preparation/README.md](vcf_preparation) step
+- Per chromosome VCF
 
 ### Output file
 - gds, pcari.rds, pcrel.gds, king.rds, pc.csv, .nullModel.rds, assoc.rds and assoc.csv
